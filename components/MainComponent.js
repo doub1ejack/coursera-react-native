@@ -19,7 +19,7 @@ class Main extends Component {
 
 	render() {
 		return(
-			<View style={{flex:1}}>
+			<View>
 				<Menu 
 					dishes={this.state.dishes} 
 					onPress={(dishId) => this.onDishSelect(dishId)}
