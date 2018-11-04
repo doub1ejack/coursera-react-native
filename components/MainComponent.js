@@ -11,7 +11,7 @@ class Main extends Component {
 	render() {
 
 		const MenuNavigator = createStackNavigator(
-			{ // Manifest of possible screens
+			{ // Manifest of possible stack-nav screens
 				Menu: {screen: Menu},
 				DishDetail: {screen: DishDetail}
 			},
@@ -25,7 +25,7 @@ class Main extends Component {
 		);
 
 		const HomeNavigator = createStackNavigator(
-			{ // Manifest of possible screens
+			{ // Manifest of possible stack-nav screens
 				Home: {screen: Home}
 			},
 			{ // Default config for all screens
