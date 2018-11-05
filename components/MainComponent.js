@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import {View, Platform} from 'react-native';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
+import Contact from './ContactComponent';
 import DishDetail from './DishDetailComponent';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
-import {Icon} from 'react-native-elements';
+import {Card, Icon} from 'react-native-elements';
 
 class Main extends Component {
 
@@ -37,6 +38,19 @@ class Main extends Component {
 			}
 		);
 
+		const ContactNavigator = createStackNavigator(
+			{ // Manifest of possible stack-nav screens
+				Contact: {screen: Contact}
+			},
+			{ // Default config for all screens
+				initialRouteName: 'Contact',
+				navigationOptions: ({ navigation }) => ({
+					headerStyle: {backgroundColor: '#512DA8'},
+					headerTintColor: '#fff',
+				})
+			}
+		);
+
 
 		const MainNavigator = createDrawerNavigator(
 			{ // Manifest of possible screens
@@ -53,9 +67,17 @@ class Main extends Component {
 						title: 'Menu',
 						drawerLabel: 'Menu'
 					}
+				},
+				Contact: {
+					screen: ContactNavigator,
+					navigatorOptions: {
+						title: 'Contact',
+						drawerLabel: 'Contact',
+					}
 				}
 			},
 			{ // Default config for all screens
+				initialRouteName: 'Contact',
 				drawerBackgroundColor: '#D1C4E9' // light purple
 			}
 		);
