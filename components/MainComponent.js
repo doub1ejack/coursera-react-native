@@ -3,6 +3,7 @@ import {View, Platform} from 'react-native';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import DishDetail from './DishDetailComponent';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import {Card, Icon} from 'react-native-elements';
@@ -31,6 +32,19 @@ class Main extends Component {
 			},
 			{ // Default config for all screens
 				initialRouteName: 'Home',
+				navigationOptions: ({ navigation }) => ({
+					headerStyle: {backgroundColor: '#512DA8'},
+					headerTintColor: '#fff',
+				})
+			}
+		);
+
+		const AboutNavigator = createStackNavigator(
+			{ // Manifest of possible stack-nav screens
+				About: {screen: About}
+			},
+			{ // Default config for all screens
+				initialRouteName: 'About',
 				navigationOptions: ({ navigation }) => ({
 					headerStyle: {backgroundColor: '#512DA8'},
 					headerTintColor: '#fff',
@@ -73,6 +87,13 @@ class Main extends Component {
 					navigatorOptions: {
 						title: 'Contact',
 						drawerLabel: 'Contact',
+					}
+				},
+				About: {
+					screen: AboutNavigator,
+					navigatorOptions: {
+						title: 'About Us',
+						drawerLabel: 'About Us',
 					}
 				}
 			},
