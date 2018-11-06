@@ -1,14 +1,42 @@
 import React, { Component } from 'react';
-import { Card } from 'react-native-elements';
-import {ScrollView, View, Text} from "react-native";
+import {Card, ListItem} from 'react-native-elements';
+import {View, Text, FlatList} from "react-native";
+import {LEADERS} from "../shared/leaders";
 
 class About extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			leaders: LEADERS
+		}
+	}
 
 	static navigationOptions = {
 		title: 'About Us'
 	};
 
 	render() {
+
+		console.log('all leaders: ' + JSON.stringify(this.state.leaders) );
+
+		const renderLeader = ({leader, index}) => {
+
+			console.log('leader: ' + leader);
+			console.log('index: ' + index);
+
+			return(
+				<ListItem
+					key={index}
+					title='[LEADER TITLE]'//{leader.name}
+					titleStyle={{fontWeight: 'bold', color: '#512DA8'}}
+					subtitle='person'
+					hideChevron={true}
+					leftAvatar={{ source: require('./images/alberto.png')}}
+				/>
+			);
+		}
+
 		return(
 			<View>
 				<Card
@@ -29,6 +57,18 @@ class About extends Component {
 						a successful chain started by our CEO, Mr. Peter Pan, that
 						featured for the first time the world's best cuisines in a pan.
 					</Text>
+				</Card>
+
+
+				<Card
+					title={'Corporate Leadership'}
+					containerStyle={{borderWidth: 1, borderColor: '#512DA8'}}
+				>
+					<FlatList
+						data={this.state.leaders}
+						renderItem={renderLeader}
+						keyExtractor={leader => leader.id.toString()}
+					/>
 				</Card>
 			</View>
 		);

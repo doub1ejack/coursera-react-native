@@ -98,7 +98,7 @@ class Main extends Component {
 				}
 			},
 			{ // Default config for all screens
-				initialRouteName: 'Contact',
+				initialRouteName: 'About',
 				drawerBackgroundColor: '#D1C4E9' // light purple
 			}
 		);
