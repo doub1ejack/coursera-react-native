@@ -18,19 +18,13 @@ class About extends Component {
 
 	render() {
 
-		console.log('all leaders: ' + JSON.stringify(this.state.leaders) );
-
-		const renderLeader = ({leader, index}) => {
-
-			console.log('leader: ' + leader);
-			console.log('index: ' + index);
-
+		const renderLeader = ({item, index}) => {
 			return(
 				<ListItem
 					key={index}
-					title='[LEADER TITLE]'//{leader.name}
+					title={item.name}
 					titleStyle={{fontWeight: 'bold', color: '#512DA8'}}
-					subtitle='person'
+					subtitle={item.designation}
 					hideChevron={true}
 					leftAvatar={{ source: require('./images/alberto.png')}}
 				/>
