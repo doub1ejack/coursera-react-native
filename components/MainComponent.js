@@ -46,9 +46,9 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Menu',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
+					headerStyle: {backgroundColor: '#512DA8', paddingRight: 15},
 					headerTintColor: '#fff',
-					headerLeft:
+					headerRight:
 						<Icon
 							name='menu'
 							size={24}
@@ -66,9 +66,9 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Home',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
+					headerStyle: {backgroundColor: '#512DA8', paddingRight: 15},
 					headerTintColor: '#fff',
-					headerLeft:
+					headerRight:
 						<Icon
 							name='menu'
 							size={24}
@@ -86,9 +86,9 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'About',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
+					headerStyle: {backgroundColor: '#512DA8', paddingRight: 15},
 					headerTintColor: '#fff',
-					headerLeft:
+					headerRight:
 						<Icon
 							name='menu'
 							size={24}
@@ -106,9 +106,9 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Contact',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
+					headerStyle: {backgroundColor: '#512DA8', paddingRight: 15},
 					headerTintColor: '#fff',
-					headerLeft:
+					headerRight:
 						<Icon
 							name='menu'
 							size={24}
@@ -187,6 +187,7 @@ class Main extends Component {
 				initialRouteName: 'Home',
 				drawerBackgroundColor: '#D1C4E9', // light purple
 				contentComponent: CustomDrawerContentComponent, // Component used to render the content of the drawer
+				drawerPosition: 'right'
 			}
 		);
 
