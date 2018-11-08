@@ -100,28 +100,60 @@ class Main extends Component {
 					screen: HomeNavigator,
 					navigationOptions: {
 						title: 'Home',
-						drawerLabel: 'Home'
+						drawerLabel: 'Home',
+						drawerIcon: ({tintColor}) => (
+							<Icon
+								name='home'
+								type='font-awesome'
+								size={24}
+								color={tintColor}
+							/>
+						)
 					}
 				},
 				Menu: {
 					screen: MenuNavigator,
 					navigationOptions: {
 						title: 'Menu',
-						drawerLabel: 'Menu'
-					}
-				},
-				Contact: {
-					screen: ContactNavigator,
-					navigatorOptions: {
-						title: 'Contact',
-						drawerLabel: 'Contact',
+						drawerLabel: 'Menu',
+						drawerIcon: ({tintColor}) => (
+							<Icon
+								name='list'
+								type='font-awesome'
+								size={24}
+								color={tintColor}
+							/>
+						)
 					}
 				},
 				About: {
 					screen: AboutNavigator,
-					navigatorOptions: {
+					navigationOptions: {
 						title: 'About Us',
 						drawerLabel: 'About Us',
+						drawerIcon: ({tintColor}) => (
+							<Icon
+								name='info'
+								type='font-awesome'
+								size={24}
+								color={tintColor}
+							/>
+						)
+					}
+				},
+				Contact: {
+					screen: ContactNavigator,
+					navigationOptions: {
+						title: 'Contact Us',
+						drawerLabel: 'Contact Us',
+						drawerIcon: ({tintColor}) => (
+							<Icon
+								name='address-card'
+								type='font-awesome'
+								size={24}
+								color={tintColor}
+							/>
+						)
 					}
 				}
 			},
