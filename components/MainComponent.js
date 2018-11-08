@@ -6,7 +6,7 @@ import Contact from './ContactComponent';
 import About from './AboutComponent';
 import DishDetail from './DishDetailComponent';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
-import {Card, Icon} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 
 class Main extends Component {
 
@@ -14,7 +14,9 @@ class Main extends Component {
 
 		const MenuNavigator = createStackNavigator(
 			{ // Manifest of possible stack-nav screens
-				Menu: {screen: Menu},
+				Menu: {
+					screen: Menu,
+				},
 				DishDetail: {screen: DishDetail}
 			},
 			{ // Default config for all screens
@@ -159,7 +161,7 @@ class Main extends Component {
 			},
 			{ // Default config for all screens
 				initialRouteName: 'About',
-				drawerBackgroundColor: '#D1C4E9' // light purple
+				drawerBackgroundColor: '#D1C4E9', // light purple
 			}
 		);
 
