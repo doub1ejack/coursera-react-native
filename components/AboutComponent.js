@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Card, ListItem} from 'react-native-elements';
-import {View, Text, FlatList} from "react-native";
+import {View, Text, FlatList, ScrollView} from "react-native";
 import {LEADERS} from "../shared/leaders";
 
 class About extends Component {
@@ -32,7 +32,7 @@ class About extends Component {
 		}
 
 		return(
-			<View>
+			<ScrollView>
 				<Card
 					title={'Our History'}
 					containerStyle={{borderWidth: 1, borderColor: '#512DA8'}}
@@ -64,7 +64,7 @@ class About extends Component {
 						keyExtractor={leader => leader.id.toString()}
 					/>
 				</Card>
-			</View>
+			</ScrollView>
 		);
 	}
 }
