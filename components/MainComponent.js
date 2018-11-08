@@ -31,7 +31,7 @@ class Main extends Component {
 							<Text style={styles.drawerHeaderText}>Ristorante ConFusion</Text>
 						</View>
 					</View>
-					<DrawerItems {...props} /> // triple dot "passes props on, whatever they are"
+					<DrawerItems {...props} /> // triple dot "passes props on" (in this case they're the
 				</SafeAreaView>
 			</ScrollView>
 		);
@@ -184,9 +184,9 @@ class Main extends Component {
 				}
 			},
 			{ // Default config for all screens
-				initialRouteName: 'About',
+				initialRouteName: 'Home',
 				drawerBackgroundColor: '#D1C4E9', // light purple
-				contentComponent: CustomDrawerContentComponent // defines our custom drawer component layout
+				contentComponent: CustomDrawerContentComponent, // Component used to render the content of the drawer
 			}
 		);
 
