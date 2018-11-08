@@ -20,8 +20,15 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Menu',
 				navigationOptions: {
-					headerStyle: {backgroundColor: '#512DA8'},
+					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
 					headerTintColor: '#fff',
+					headerLeft:
+						<Icon
+							name='menu'
+							size={24}
+							color='white'
+							onPress={() => navigation.toggleDrawer()}
+						/>
 				}
 			}
 		);
@@ -33,8 +40,15 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Home',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8'},
+					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
 					headerTintColor: '#fff',
+					headerLeft:
+						<Icon
+							name='menu'
+							size={24}
+							color='white'
+							onPress={() => navigation.toggleDrawer()}
+						/>
 				})
 			}
 		);
@@ -46,8 +60,15 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'About',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8'},
+					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
 					headerTintColor: '#fff',
+					headerLeft:
+						<Icon
+							name='menu'
+							size={24}
+							color='white'
+							onPress={() => navigation.toggleDrawer()}
+						/>
 				})
 			}
 		);
@@ -59,8 +80,15 @@ class Main extends Component {
 			{ // Default config for all screens
 				initialRouteName: 'Contact',
 				navigationOptions: ({ navigation }) => ({
-					headerStyle: {backgroundColor: '#512DA8'},
+					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
 					headerTintColor: '#fff',
+					headerLeft:
+						<Icon
+							name='menu'
+							size={24}
+							color='white'
+							onPress={() => navigation.toggleDrawer()}
+						/>,
 				})
 			}
 		);
