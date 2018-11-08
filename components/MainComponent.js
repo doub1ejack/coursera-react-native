@@ -21,7 +21,7 @@ class Main extends Component {
 			},
 			{ // Default config for all screens
 				initialRouteName: 'Menu',
-				navigationOptions: {
+				navigationOptions: ({ navigation }) => ({
 					headerStyle: {backgroundColor: '#512DA8', paddingLeft: 15},
 					headerTintColor: '#fff',
 					headerLeft:
@@ -31,7 +31,7 @@ class Main extends Component {
 							color='white'
 							onPress={() => navigation.toggleDrawer()}
 						/>
-				}
+				})
 			}
 		);
 
