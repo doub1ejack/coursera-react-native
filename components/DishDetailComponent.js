@@ -20,7 +20,10 @@ class DishDetail extends Component {
 	render() {
 		const dishId = this.props.navigation.getParam('dishId', '');
 
-		// TODO this would make a good component, instead of a function.  Meh.
+		/**
+		 * Renders a number (eg 4) as a 5-star rating (★★★★☆) using fontawesome icons
+		 * @TODO this would make a good component, instead of a function.  Meh.
+		 */
 		function RenderStars(stars){
 			var starList = [];
 			var solidStar = <Icon name='star' type='font-awesome' size={20} />
@@ -34,6 +37,10 @@ class DishDetail extends Component {
 			return(starList);
 		}
 
+		/**
+		 * Render comments in a card at the end of the menu item
+		 * @constructor
+		 */
 		function RenderComments(props){
 			const comments = props.comments;
 			const renderCommentItem = ({item, index}) =>  {
@@ -58,6 +65,10 @@ class DishDetail extends Component {
 
 		}
 
+		/**
+		 * Renders a dish and it's comments
+		 * @constructor
+		 */
 		function RenderDish(props) {
 			const dish = props.dish;
 			const comments = props.comments;
