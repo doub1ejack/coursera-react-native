@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList} from 'react-native';
-import { Card } from 'react-native-elements';
+import {Card, Icon} from 'react-native-elements';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import moment from 'moment';
@@ -20,13 +20,27 @@ class DishDetail extends Component {
 	render() {
 		const dishId = this.props.navigation.getParam('dishId', '');
 
+		// TODO this would make a good component, instead of a function.  Meh.
+		function RenderStars(stars){
+			var starList = [];
+			var solidStar = <Icon name='star' type='font-awesome' size={20} />
+			var outlinedStar = <Icon name='star-o' type='font-awesome' size={20} />
+
+			for(var i=0; i<5; i++){
+				if(i<stars) { starList.push(solidStar); }
+				else { starList.push(outlinedStar); }
+			}
+
+			return(starList);
+		}
+
 		function RenderComments(props){
 			const comments = props.comments;
 			const renderCommentItem = ({item, index}) =>  {
 				return(
 					<View key={index} style={{margin:10}}>
+						<Text style={{fontSize: 12}}>{RenderStars(item.rating)}</Text>
 						<Text style={{fontSize: 14}}>{item.comment}</Text>
-						<Text style={{fontSize: 12}}>{item.rating} stars</Text>
 						<Text style={{fontSize: 12}}>-- {item.author}, {moment(item.date).format("MMM Do 'YY")}</Text>
 					</View>
 				);
