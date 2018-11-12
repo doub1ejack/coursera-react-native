@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, FlatList} from 'react-native';
 import { Card } from 'react-native-elements';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -19,28 +19,28 @@ class DishDetail extends Component {
 	render() {
 		const dishId = this.props.navigation.getParam('dishId', '');
 
-		function GetAverageRatingFormatted(comments){
-			var totalRating = comments.reduce( function(a, b){
-				return a + b['rating'];
-			}, 0);
-			return(totalRating/comments.length + "/" + comments.length);
-		}
-
 		function RenderComments(props){
 			const comments = props.comments;
-
-			if(comments != null){
+			const renderCommentItem = ({item, index}) =>  {
 				return(
-					<View>
-						<Text style={{margin:10}}>{GetAverageRatingFormatted(comments)} | There are {comments.length} comments</Text>
+					<View key={index} style={{margin:10}}>
+						<Text style={{fontSize: 14}}>{item.comment}</Text>
+						<Text style={{fontSize: 12}}>{item.rating} stars</Text>
+						<Text style={{fontSize: 12}}>-- {item.author}, {item.date}</Text>
 					</View>
-				)
-			}
-			else{
-				return(
-					<View>No comments</View>
 				);
 			}
+
+			return(
+				<Card  title="Comments">
+					<FlatList
+						data={comments}
+						renderItem={renderCommentItem}
+						keyExtractor={item => item.id.toString() }
+						/>
+				</Card>
+			);
+
 		}
 
 		function RenderDish(props) {
