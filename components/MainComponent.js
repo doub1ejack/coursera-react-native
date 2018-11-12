@@ -8,6 +8,8 @@ import DishDetail from './DishDetailComponent';
 import {createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import {Icon} from 'react-native-elements';
 
+const HOME_SCREEN = 'Menu';
+
 class Main extends Component {
 
 	render() {
@@ -184,7 +186,7 @@ class Main extends Component {
 				}
 			},
 			{ // Default config for all screens
-				initialRouteName: 'Home',
+				initialRouteName: HOME_SCREEN,
 				drawerBackgroundColor: '#D1C4E9', // light purple
 				contentComponent: CustomDrawerContentComponent, // Component used to render the content of the drawer
 				drawerPosition: 'right'
