@@ -3,6 +3,7 @@ import { View, Text, ScrollView, FlatList} from 'react-native';
 import { Card } from 'react-native-elements';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
+import moment from 'moment';
 
 class DishDetail extends Component {
 	
@@ -26,7 +27,7 @@ class DishDetail extends Component {
 					<View key={index} style={{margin:10}}>
 						<Text style={{fontSize: 14}}>{item.comment}</Text>
 						<Text style={{fontSize: 12}}>{item.rating} stars</Text>
-						<Text style={{fontSize: 12}}>-- {item.author}, {item.date}</Text>
+						<Text style={{fontSize: 12}}>-- {item.author}, {moment(item.date).format("MMM Do 'YY")}</Text>
 					</View>
 				);
 			}
