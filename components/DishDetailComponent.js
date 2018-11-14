@@ -26,17 +26,14 @@ class DishDetail extends Component {
 		 */
 		function RenderStars(stars){
 			var starList = [];
+			var starIcon = (name) => <Icon key={i} name={name} type='font-awesome' size={20} color='#512DA8' />
 
 			for(var i=0; i<5; i++){
 				if(i<stars) {
-					starList.push(
-						<Icon key={i} name='star' type='font-awesome' size={20} />
-					);
+					starList.push( starIcon('star') );
 				}
 				else {
-					starList.push(
-						<Icon key={i} name='star-o' type='font-awesome' size={20} />
-					);
+					starList.push( starIcon('star-o') );
 				}
 			}
 
@@ -52,7 +49,7 @@ class DishDetail extends Component {
 			const renderCommentItem = ({item, index}) =>  {
 				return(
 					<View key={index} style={{margin:10}}>
-						<Text style={{fontSize: 12}}>{RenderStars(item.rating)}</Text>
+						<Text>{RenderStars(item.rating)}</Text>
 						<Text style={{fontSize: 14}}>{item.comment}</Text>
 						<Text style={{fontSize: 12}}>-- {item.author}, {moment(item.date).format("MMM Do 'YY")}</Text>
 					</View>
