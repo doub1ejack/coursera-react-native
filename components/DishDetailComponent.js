@@ -26,12 +26,18 @@ class DishDetail extends Component {
 		 */
 		function RenderStars(stars){
 			var starList = [];
-			var solidStar = <Icon name='star' type='font-awesome' size={20} />
-			var outlinedStar = <Icon name='star-o' type='font-awesome' size={20} />
 
 			for(var i=0; i<5; i++){
-				if(i<stars) { starList.push(solidStar); }
-				else { starList.push(outlinedStar); }
+				if(i<stars) {
+					starList.push(
+						<Icon key={i} name='star' type='font-awesome' size={20} />
+					);
+				}
+				else {
+					starList.push(
+						<Icon key={i} name='star-o' type='font-awesome' size={20} />
+					);
+				}
 			}
 
 			return(starList);
