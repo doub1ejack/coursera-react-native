@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "basic-app",
+    "name": "con-fusion",
     "description": "This project is really great.",
-    "slug": "basic-app",
+    "slug": "con-fusion",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
